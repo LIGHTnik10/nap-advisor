@@ -1,6 +1,8 @@
-# Nap Advisor
+# Nap Advisor 💤
 
 A smart web application that provides personalized nap recommendations based on the current time, your tiredness level, and age. Built with Next.js 15 and deployed on Vercel.
+
+🔗 **Live Demo:** https://nap-advisor-lzr446veh-bmsdocs-admins-projects.vercel.app
 
 ## Features
 
