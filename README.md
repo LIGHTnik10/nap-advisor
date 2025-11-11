@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nap Advisor
+
+A smart web application that provides personalized nap recommendations based on the current time, your tiredness level, and age. Built with Next.js 15 and deployed on Vercel.
+
+## Features
+
+- **Intelligent Nap Recommendations**: Get science-backed advice on whether you should nap
+- **Personalized Duration**: Calculates optimal nap duration based on your age and tiredness
+- **Flexible Ranges**: Provides minimum and maximum nap durations you can get away with
+- **Time-Based Logic**: Considers the current time to optimize your sleep schedule
+- **Beautiful UI**: Modern, responsive design with dark mode support
+- **Real-time Updates**: Interactive sliders for instant feedback
+
+## How It Works
+
+The app uses a sophisticated algorithm that considers:
+
+1. **Current Time**: Different times of day have different napping impacts
+   - Morning (before 11 AM): Generally not recommended unless very tired
+   - Midday (11 AM - 3 PM): Optimal nap window
+   - Late Afternoon (3 PM - 5 PM): Short naps only
+   - Evening (after 5 PM): Not recommended
+
+2. **Tiredness Level**: Scale of 1-10 to adjust nap duration and necessity
+   - Higher tiredness = longer recommended nap
+   - Minimum tiredness thresholds vary by time of day
+
+3. **Age**: Different age groups have different sleep needs
+   - Children: Longer naps (45-90 minutes)
+   - Teenagers: Moderate naps (30 minutes)
+   - Adults: Power naps (20-25 minutes)
+   - Seniors: Slightly longer naps (30 minutes)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.x or later
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deploy to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+### Option 1: Deploy via Vercel CLI
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Install Vercel CLI:
+```bash
+npm install -g vercel
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Deploy:
+```bash
+vercel
+```
 
-## Deploy on Vercel
+3. Follow the prompts to complete deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Option 2: Deploy via Vercel Dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
+2. Go to [vercel.com](https://vercel.com)
+3. Click "Import Project"
+4. Select your repository
+5. Vercel will automatically detect Next.js and configure the build settings
+6. Click "Deploy"
+
+### Option 3: Deploy with One Click
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=YOUR_REPO_URL)
+
+## Technology Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+- **Runtime**: React 19
+
+## Project Structure
+
+```
+nap-advisor/
+├── app/
+│   ├── layout.tsx          # Root layout with metadata
+│   ├── page.tsx            # Main page with form and results
+│   └── globals.css         # Global styles
+├── lib/
+│   └── napLogic.ts         # Nap recommendation algorithm
+├── public/                 # Static assets
+└── vercel.json            # Vercel configuration
+```
+
+## License
+
+MIT
+
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
